@@ -43,7 +43,26 @@ function init() {
 
                     this.indexValue = this.maxIndexValue;
                 }
+            },
+
+            autoNext: function () {
+                
+                setInterval(() => {
+
+                    if (this.indexValue < this.maxIndexValue) {
+                    
+                        this.indexValue++;
+                    } else {
+    
+                        this.indexValue = 0;
+                    }
+                }, 3000);
             }
+        },
+
+        created() {
+
+            this.autoNext();
         }
     });
 }

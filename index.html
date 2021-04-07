@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
     <!-- VueJS -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
@@ -14,8 +19,16 @@
 </head>
 
 <body>
-    <div id="app">
-        {{ log }}
+    <div id="app" class="container">
+        <div class="slider-wrapper">
+            <button @click="prevImg">Prev</button>
+
+            <div v-for="(image, index) in images" v-if="index === indexValue">
+                <img :src="image" alt="">
+            </div>
+
+            <button @click="nextImg">Next</button>
+        </div>
     </div>
 </body>
 </html>

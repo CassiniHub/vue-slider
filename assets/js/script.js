@@ -13,19 +13,14 @@ function init() {
                 'https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg'
             ],
 
-            indexValue: 0,
-            maxIndexValue: 3,
+            indexValue: 0
         },
 
         methods: {
-            sliderLng: function () {
-                
-                return this.images.length;
-            },
 
             nextImg: function () {
                 
-                if (this.indexValue < this.maxIndexValue) {
+                if (this.indexValue < (this.images.length - 1)) {
                     
                     this.indexValue++;
                 } else {
@@ -41,7 +36,7 @@ function init() {
                     this.indexValue--;
                 } else {
 
-                    this.indexValue = this.maxIndexValue;
+                    this.indexValue = this.images.length;
                 }
             },
 
@@ -49,13 +44,7 @@ function init() {
                 
                 setInterval(() => {
 
-                    if (this.indexValue < this.maxIndexValue) {
-                    
-                        this.indexValue++;
-                    } else {
-    
-                        this.indexValue = 0;
-                    }
+                    this.nextImg()
                 }, 3000);
             }
         },

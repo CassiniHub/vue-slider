@@ -21,8 +21,8 @@
         <div class="slider-wrapper">
             <button @click="prevImg">Prev</button>
 
-            <div v-for="(image, index) in images" v-if="index === indexValue">
-                <img :src="image" alt="">
+            <div>
+                <img :src="images[indexValue]" alt="">
             </div>
 
             <button @click="nextImg">Next</button>
